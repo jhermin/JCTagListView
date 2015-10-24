@@ -14,7 +14,6 @@
 {
     if (self = [super initWithFrame:frame]) {
         self.layer.masksToBounds = YES;
-        self.layer.borderWidth = 1.0f;
         
         self.titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
