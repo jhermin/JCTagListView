@@ -52,7 +52,7 @@ static NSString * const reuseIdentifier = @"tagListViewItemId";
     self.tags = [NSMutableArray array];
     
     self.tagColor = [UIColor darkGrayColor];
-    self.tagCornerRadius = 10.0f;
+    self.tagCornerRadius = 12.0f;
     
     JCCollectionViewTagFlowLayout *layout = [[JCCollectionViewTagFlowLayout alloc] init];
     
@@ -85,7 +85,7 @@ static NSString * const reuseIdentifier = @"tagListViewItemId";
     
     CGRect frame = [self.tags[indexPath.item] boundingRectWithSize:maxSize options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14.0f]} context:nil];
     
-    return CGSizeMake(frame.size.width + 10.0f, layout.itemSize.height);
+    return CGSizeMake(frame.size.width + 10.0f, layout.itemSize.height - 2.0f);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
