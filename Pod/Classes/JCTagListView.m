@@ -85,17 +85,18 @@ static NSString * const reuseIdentifier = @"tagListViewItemId";
     
     CGRect frame = [self.tags[indexPath.item] boundingRectWithSize:maxSize options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14.0f]} context:nil];
     
-    return CGSizeMake(frame.size.width + 20.0f, layout.itemSize.height);
+    return CGSizeMake(frame.size.width + 10.0f, layout.itemSize.height);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     JCTagCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
-    cell.layer.borderColor = self.tagColor.CGColor;
+    cell.backgroundColor = self.tagColor;
+    cell.layer.borderColor = [UIColor clearColor].CGColor;
     cell.layer.cornerRadius = self.tagCornerRadius;
     cell.titleLabel.text = self.tags[indexPath.item];
-    cell.titleLabel.textColor = self.tagColor;
+    cell.titleLabel.textColor = [UIColor whiteColor];
+    cell.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0f];
     
     return cell;
 }
